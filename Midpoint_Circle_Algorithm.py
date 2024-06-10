@@ -1,64 +1,42 @@
 import matplotlib.pyplot as plt
 
-def create_circle(radius, xc, yc):
-    points = set()
+def plot_circle_points(x_center, y_center, x, y, x_values, y_values):
+    points = [
+        (x_center + x, y_center + y),
+        (x_center - x, y_center + y),
+        (x_center + x, y_center - y),
+        (x_center - x, y_center - y),
+        (x_center + y, y_center + x),
+        (x_center - y, y_center + x),
+        (x_center + y, y_center - x),
+        (x_center - y, y_center - x)
+    ]
+    for point in points:
+        x_values.append(point[0])
+        y_values.append(point[1])
 
-    x0, y0 = 0, radius
-    x, y = x0, y0
-    p = 5/4 - radius
-    k = 0
+def circle(x_center, r):
+    x = 0
+    y = r
+    p = 1 - r
+    x_values = []
+    y_values = []
 
-    def plot_points(xc, yc, x, y):
-        points.add((xc + x, yc + y))
-        points.add((xc - x, yc + y))
-        points.add((xc + x, yc - y))
-        points.add((xc - x, yc - y))
-        points.add((xc + y, yc + x))
-        points.add((xc - y, yc + x))
-        points.add((xc + y, yc - x))
-        points.add((xc - y, yc - x))
+    plot_circle_points(x_center, x_center, x, y, x_values, y_values)
 
-    while x <= y:
-        plot_points(xc, yc, x, y)
-        if p < 0:
-            p += 2*x + 1
-        else:
-            p += 2*(x - y) + 1
-            y -= 1
+    while x < y:
         x += 1
+        if p < 0:
+            p = p + 2 * x + 1
+        else:
+            y -= 1
+            p = p + 2 * x + 1 - 2 * y
 
-    return points
+        plot_circle_points(x_center, x_center, x, y, x_values, y_values)
 
-def check_point_position(x, y, radius):
-    fx_y = x**2 + y**2 - radius**2
-    if fx_y < 0:
-        return "Inside"
-    elif fx_y > 0:
-        return "Outside"
-    else:
-        return "On the circle"
+    plt.scatter(x_values, y_values)
+    plt.title('Circle Drawing Algorithm')
+    plt.axis('equal')  # Ensure the circle is not skewed
+    plt.show()
 
-# Circle parameters
-radius = 50
-xc, yc = 0, 0
-
-# Create the circle
-circle_points = create_circle(radius, xc, yc)
-
-# Check a point
-x_point, y_point = 20, 30
-position = check_point_position(x_point, y_point, radius)
-
-# Plot the circle and the point
-fig, ax = plt.subplots()
-for point in circle_points:
-    ax.plot(point[0], point[1], 'bo')  # Plot circle points in blue color
-
-ax.plot(x_point, y_point, 'ro')  # Plot the test point in red color
-ax.annotate(f'({x_point}, {y_point}): {position}', (x_point, y_point + 3))  # Annotate the position of the point
-
-plt.title("Midpoint Circle Algorithm")
-ax.set_aspect('equal', adjustable='datalim')
-plt.gca().set_aspect('equal', adjustable='box')
-plt.gca().invert_yaxis()
-plt.show()
+circle(0, 20)
