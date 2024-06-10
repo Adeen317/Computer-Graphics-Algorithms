@@ -7,7 +7,7 @@ def transformation(y, x):
 
 
 tri_x = np.array([[0, 5, 0, 0],
-                  [0,0,5,0]])
+                  [0, 0, 5, 0]])
 
 rotation=np.array([[0.707, -0.707],
                    [0.707, 0.707]])
@@ -15,13 +15,12 @@ rotation=np.array([[0.707, -0.707],
 scaling=np.array([[2, 0],
                   [0, 2]])
 
-translation=np.array([[1,0],
-                     [0,0]])
+translation=np.array([[2],[2]])
 
 
 t_rot = transformation(tri_x, rotation)
 t_sca=transformation(tri_x, scaling)
-t_tra=transformation(tri_x, translation)
+t_tra=(tri_x + translation)
 
 
 # Plot the original triangle
