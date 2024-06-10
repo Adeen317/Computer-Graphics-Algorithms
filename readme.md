@@ -17,7 +17,12 @@
 ### Clipping 
 - [Clipping Window](https://github.com/Adeen317/Computer-Graphics-Algorithms/blob/adeen_space/Clipping_Window.py)
 - [Clipping to Normalized Window](https://github.com/Adeen317/Computer-Graphics-Algorithms/blob/adeen_space/Clipping_Window.py)
+- [Point Clipping](https://github.com/Adeen317/Computer-Graphics-Algorithms/blob/adeen_space/Point%20Clipping.py)
+- [Cohen Sutherland Algorithm](https://github.com/Adeen317/Computer-Graphics-Algorithms/blob/adeen_space/Cohen_Sutherland_Algorithm.py)
 
+
+### 3D Transformation
+- [3D Transformation](https://github.com/Adeen317/Computer-Graphics-Algorithms/blob/adeen_space/3D_Transformation.py)
 
 ### Polygon Clipping
 - [Sutherland Hodgman Algorithm](https://github.com/Adeen317/Computer-Graphics-Algorithms/blob/main/Sutherland_Hodgman_Algorithm.py)
