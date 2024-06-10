@@ -4,7 +4,7 @@
 - [Digital Differential Analyzer(DDA)](https://github.com/Adeen317/Computer-Graphics-Algorithms/blob/adeen_space/Digital_Differential_Analyzer(DDA).py)
 - [Bresenham's Algorithm](https://github.com/Adeen317/Computer-Graphics-Algorithms/blob/adeen_space/Bresenham's_Algorithm.py)
 
-### Circle Drawing Algorithm
+### Circle/Ellipse Drawing Algorithm
 - [Midpoint Circle Algorithm](https://github.com/Adeen317/Computer-Graphics-Algorithms/blob/adeen_space/Midpoint_Circle_Algorithm.py)
 - [Midpoint Ellipse Algorithm](https://github.com/Adeen317/Computer-Graphics-Algorithms/blob/adeen_space/Midpoint_Ellipse_Algorithm.py)
 
